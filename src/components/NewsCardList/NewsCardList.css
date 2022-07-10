@@ -1,0 +1,39 @@
+.news {
+    display: flex;
+    flex-direction: column;
+    padding: 80px 104px;
+    background: #F5F6F7;
+}
+
+.news__title {
+    margin: 0;
+    font-family: 'Roboto Slab';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 46px;
+    color: #1A1B22;
+}
+
+.news__list {
+    list-style: none;
+    margin-top: 64px;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    row-gap: 16px;
+    column-gap: 16px;
+}
+
+.news__more {
+    margin: 0 auto;
+    margin-top: 64px;
+    min-width: 288px;
+    background: #E8E8E8;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    color: #1A1B22;
+}
