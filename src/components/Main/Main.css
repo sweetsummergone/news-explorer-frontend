@@ -78,3 +78,39 @@
     line-height: 24px;
     color: #FFFFFF;
 }
+
+.main__about {
+    padding: 0 104px;
+    margin-top: 80px;
+    margin-bottom: 80px;
+    display: flex;
+}
+
+.about__image {
+    width: 464px;
+    height: 464px;
+    border-radius: 1000px;
+}
+
+.about__bio {
+    margin-top: calc(131px - 80px);
+    margin-left: 56px;
+}
+
+.about__title {
+    font-family: 'Roboto Slab';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 46px;
+    color: #1A1B22;
+}
+
+.about__desc {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    color: #1A1B22;
+}

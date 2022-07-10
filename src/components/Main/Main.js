@@ -1,5 +1,6 @@
 import authorImage from "../../images/katana.png";
 import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
 
 export default function Main() {
     return (
@@ -23,6 +24,7 @@ export default function Main() {
                     </div>
                 </section>
             </main>
+            <Footer />
         </>
     )
 }
