@@ -7,10 +7,8 @@ export default function Main() {
     return (
         <>
             <Header />
-            <main className="main">
-                <SearchForm />
-                <About />
-            </main>
+            <SearchForm />
+            <About />
             <Footer />
         </>
     )

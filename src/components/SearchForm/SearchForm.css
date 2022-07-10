@@ -1,13 +1,15 @@
 
 .search__form {
+    background: url('../../images/background.png') no-repeat;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    max-width: 608px;
+    align-items: center;
 }
 
 .search__title {
     margin: 0;
+    max-width: 608px;
     max-height: 128px;
     font-family: "Inter";
     padding-top: 160px;
@@ -22,6 +24,7 @@
 .search__subtitle {
     margin-top: 32px;
     margin-bottom: 88px;
+    max-width: 608px;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
@@ -33,6 +36,7 @@
 .searchbar {
     position: relative;
     display: flex;
+    max-width: 608px;
 }
 
 .searchbar__input {
