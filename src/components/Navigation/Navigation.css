@@ -46,6 +46,11 @@
 }
 
 .navigation__auth_button_dark {
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    min-width: 112px;
     color: #1A1B22;
     border: 1px solid #1A1B22;
 }
