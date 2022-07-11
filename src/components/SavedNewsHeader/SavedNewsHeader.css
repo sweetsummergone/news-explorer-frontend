@@ -1,0 +1,8 @@
+.header__dark {
+    box-shadow: inset 0px -1px 0px #D1D2D6;
+    position: initial;
+}
+
+.header__title_dark {
+    color: #1A1B22;
+}

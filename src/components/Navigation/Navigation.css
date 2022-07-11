@@ -1,0 +1,51 @@
+.navigation {
+    display: flex;
+}
+
+.navigation__element {
+    text-decoration: none;
+    cursor: pointer;
+    margin: 0;
+    margin: 30px 42px 0 auto;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    color: #FFFFFF;
+}
+
+.navigation__element_dark {
+    color: #1A1B22;
+}
+
+.navigation__element_active {
+    cursor: default;
+    border-bottom: #FFFFFF 3px solid;
+}
+
+.navigation__element_active_dark {
+    border-bottom: #1A1B22 3px solid;
+}
+
+.navigation__auth_button {
+    cursor: pointer;
+    background: none;
+    color: white;
+    min-width: 176px;
+    max-height: 48px;
+    border: 1px solid #FFFFFF;
+    border-radius: 100px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    margin-top: 19px;
+    margin-right: 104px;
+}
+
+.navigation__auth_button_dark {
+    color: #1A1B22;
+    border: 1px solid #1A1B22;
+}
