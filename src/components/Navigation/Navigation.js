@@ -1,19 +1,19 @@
 import { Link } from "react-router-dom";
 import Logout from "../../images/logout.svg";
 
-export default function Navigation({auth}) {
+export default function Navigation({auth, onSignUp}) {
     if (!auth) return (
         <nav className="navigation">
             <Link className="navigation__element navigation__element_active" to='/'>Home</Link>
             <Link className="navigation__element" to='/saved-news'>Saved articles</Link>
-            <button className="navigation__auth_button">Sign in</button>
+            <button onClick={() => onSignUp("signup")} className="navigation__auth_button">Sign in</button>
         </nav>
     )
     return (
         <nav className="navigation">
             <Link className="navigation__element navigation__element_dark" to='/'>Home</Link>
             <Link className="navigation__element navigation__element_dark navigation__element_active navigation__element_active_dark" to='/saved-news'>Saved articles</Link>
-            <button className="navigation__auth_button navigation__auth_button_dark">Elise <img src={Logout} /></button>
+            <button className="navigation__auth_button navigation__auth_button_dark">Elise <img src={Logout} alt="logout"/></button>
         </nav>
     )
 }

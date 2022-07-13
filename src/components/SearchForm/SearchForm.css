@@ -73,7 +73,7 @@
 
 .button {
     color: #FFF;
-    background: #2F71E5;
+    background-color: #2F71E5;
     cursor: pointer;
     border: none;
     min-height: 64px;
@@ -84,10 +84,24 @@
     font-weight: 500;
     font-size: 18px;
     line-height: 24px;
+    transition: background-color 0.35s ease-in-out;
+    -moz-transition: background-color 0.35s ease-in-out;
+    -webkit-transition: background-color 0.35s ease-in-out;
+    -o-transition: background-color 0.35s ease-in-out;
+    -ms-transition: background-color 0.35s ease-in-out;
+}
+  
+.button:hover {
+    background-color: #347EFF;
 }
 
+
 .disabled {
-    background: #E8E8E8;
+    background-color: #E8E8E8;
     cursor: default;
     color: #1A1B22;
+}
+
+.disabled:hover {
+    background-color: #E8E8E8;
 }
