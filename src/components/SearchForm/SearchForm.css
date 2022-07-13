@@ -23,8 +23,8 @@
 }
 
 .search__subtitle {
+    margin: 0;
     margin-top: 32px;
-    margin-bottom: 88px;
     max-width: 608px;
     font-family: 'Roboto';
     font-style: normal;
@@ -35,6 +35,7 @@
 }
 
 .searchbar {
+    margin-top: 88px;
     position: relative;
     display: flex;
     max-width: 608px;
@@ -104,4 +105,41 @@
 
 .disabled:hover {
     background-color: #E8E8E8;
+}
+
+@media screen and (max-width: 768px) {
+    .search__title {
+        max-width: 452px;
+        max-height: 80px;
+        font-size: 36px;
+        line-height: 40px;
+        padding-top: 104px;
+    }
+
+    .search__subtitle {
+        margin-top: 18px;
+        max-width: 452px;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 24px;
+    }
+
+    .searchbar {
+        margin-top: 48px;
+        max-width: 448px;
+    }
+
+    .searchbar__input {
+        min-width: 448px;
+        min-height: 56px;
+        margin-bottom: 48px;
+    }
+
+    .searchbar__button {
+        min-width: 160px;
+    }
+
+    .button {
+        min-height: 56px;
+    }
 }

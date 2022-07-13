@@ -8,12 +8,22 @@
 }
 
 .header__title {
-    margin: 0;
-    margin: 30px auto 26px 104px;
+    margin: auto;
+    margin-left: 104px;
     font-family: 'Roboto Slab';
     font-style: normal;
     font-weight: 700;
     font-size: 20px;
     line-height: 24px;
     color: #FFFFFF;
+}
+
+@media screen and (max-width: 768px) {
+    .header {
+        min-height: 66px;
+    }
+
+    .header__title {
+        margin-left: 40px;
+    }
 }

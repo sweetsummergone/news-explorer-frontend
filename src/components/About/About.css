@@ -1,7 +1,6 @@
 .about {
     padding: 0 104px;
-    margin-top: 80px;
-    margin-bottom: 80px;
+    margin: 80px auto;
     display: flex;
 }
 
@@ -32,4 +31,36 @@
     font-size: 18px;
     line-height: 24px;
     color: #1A1B22;
+}
+
+@media screen and (max-width: 768px) {
+    .about {
+        padding: 0 40px;
+        margin: 40px auto;
+    }
+
+    .about__image {
+        margin-top: 20px;
+        width: 232px;
+        height: 232px;
+    }
+
+    .about__bio {
+        margin-top: 0;
+        margin-left: 32px;
+        max-width: 424px;
+    }
+
+    .about__title {
+        margin: 0;
+        font-size: 30px;
+        line-height: 40px;
+    }
+
+    .about__desc {
+        font-size: 18px;
+        line-height: 24px;
+        margin: 0;
+        margin-top: 10px;
+    }
 }

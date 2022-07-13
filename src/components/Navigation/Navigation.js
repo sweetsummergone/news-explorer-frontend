@@ -6,7 +6,7 @@ export default function Navigation({auth, onSignUp}) {
         <nav className="navigation">
             <Link className="navigation__element navigation__element_active" to='/'>Home</Link>
             <Link className="navigation__element" to='/saved-news'>Saved articles</Link>
-            <button onClick={() => onSignUp("signup")} className="navigation__auth_button">Sign in</button>
+            <button onClick={() => onSignUp("signin")} className="navigation__auth_button">Sign in</button>
         </nav>
     )
     return (

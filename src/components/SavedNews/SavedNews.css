@@ -39,3 +39,25 @@
     text-decoration: none;
     color: #2F71E5;
 }
+
+@media screen and (max-width: 768px) {
+    .saved__header {
+        padding: 0 40px;
+    }
+
+    .saved__mark {
+        margin: 24px 0 16px 0;
+        font-size: 14px;
+        line-height: 24px;
+    }
+
+    .saved__title {
+        max-width: 336px;
+        font-size: 30px;
+        line-height: 34px;
+    }
+
+    .saved__subtitle {
+        padding: 16px 0 32px 0;
+    }
+}
