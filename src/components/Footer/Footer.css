@@ -55,7 +55,7 @@
     margin-left: 0;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1280px) {
     .footer {
         padding: 0 40px;
     }
@@ -69,7 +69,7 @@
     }
 }
 
-@media screen and (max-width: 320px) { 
+@media screen and (max-width: 768px) { 
     .footer {
         padding: 20px 16px;
         display: grid;
@@ -93,14 +93,17 @@
     .footer__copyright {
         grid-area: Footer;
     }
+    .footer__element {
+        margin: 10px 0;
+    }
     .footer__element:nth-of-type(1) {
         grid-area: Home;
     }
     .footer__element:nth-of-type(2) {
-        margin: 10px 0;
         grid-area: Yandex;
     }
     .footer__social {
+        margin-left: auto;
         grid-area: Social;
     }
 }

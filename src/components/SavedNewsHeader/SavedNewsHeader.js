@@ -6,7 +6,7 @@ import Cross from "../../images/plus.svg";
 
 export default function SavedNewsHeader() {
     const [isOpened, setIsOpened] = useState(false);
-    const WIDTH_MOBILE = 320;
+    const WIDTH_MOBILE = 768;
 
     const { width } = useWindowDimensions();
 
@@ -24,7 +24,7 @@ export default function SavedNewsHeader() {
             </header>
             {isOpened && 
                 <>    
-                    <div className="modal__overlay" />
+                    <div onClick={() => setIsOpened(false)} className="modal__overlay" />
                     <Navigation isOpened auth/>
                 </>
             }

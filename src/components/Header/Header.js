@@ -6,13 +6,13 @@ import Cross from "../../images/plus.svg";
 
 export default function Header({ onSignUp }) {
     const [isOpened, setIsOpened] = useState(false);
-    const WIDTH_MOBILE = 320;
+    const WIDTH_MOBILE = 768;
 
     const { width } = useWindowDimensions();
 
     if (width > WIDTH_MOBILE) return (
         <header className="header">
-            <p className="header__title">{width}</p>
+            <p className="header__title">NewsExplorer</p>
             <Navigation isOpened={true} onSignUp={onSignUp}/>
         </header>
     )
@@ -24,7 +24,7 @@ export default function Header({ onSignUp }) {
             </header>
             {isOpened && 
                 <>    
-                    <div className="modal__overlay" />
+                    <div onClick={() => setIsOpened(false)} className="modal__overlay" />
                     <Navigation isOpened onSignUp={onSignUp}/>
                 </>
             }
