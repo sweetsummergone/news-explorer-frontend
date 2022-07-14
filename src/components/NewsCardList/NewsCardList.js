@@ -18,7 +18,7 @@ export default function NewsCardList({ newsObj, loadingStatus: isLoading }) {
                 <h2 className="news__title">Search results</h2>
                 <ul className="news__list">
                     {newsObj.slice(0, page * 3).map(element => {
-                        return <li key={element.id}><NewsCard image={element.image} category={element.category} date={element.date} title={element.title} subtitle={element.subtitle} source={element.source} /></li>
+                        return <li key={element.id}><NewsCard image={element.image} category={element.category} date={element.date} title={element.title} subtitle={element.subtitle} source={element.source} isSearch={true}/></li>
                     })}
                 </ul>
                 <button disabled={page * 3 >= newsObj.length} className={page * 3 < newsObj.length ? "news__more button" : "news__more button disabled"} onClick={() => setPage(page + 1)}>Show more</button>

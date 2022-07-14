@@ -15,6 +15,7 @@
 
 .news__title {
     margin: 0;
+    margin-bottom: 64px;
     font-family: 'Roboto Slab';
     font-style: normal;
     font-weight: 400;
