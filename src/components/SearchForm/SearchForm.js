@@ -18,7 +18,7 @@ export default function SearchForm({ onSearch, onLoading, loadingStatus: isLoadi
     }
 
     return (
-        <form className="search__form" onSubmit={(e) => {handleFormSubmit(e)}}>
+        <form className="search" onSubmit={(e) => {handleFormSubmit(e)}}>
             <h1 className="search__title">What's going on in the world?</h1>
             <p className="search__subtitle">Find the latest news on any topic and save them in your personal account.</p>
             <div className="searchbar">

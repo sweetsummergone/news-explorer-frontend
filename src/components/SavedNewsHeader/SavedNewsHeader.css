@@ -1,12 +1,12 @@
-.header__dark {
+.header_--dark {
     box-shadow: inset 0px -1px 0px #D1D2D6;
     position: initial;
 }
 
-.header__title_dark {
+.header__title--dark {
     color: #1A1B22;
 }
 
-.header__toggler_dark {
+.header__toggler--dark {
     filter: invert(7%) sepia(13%) saturate(1%) hue-rotate(254deg) brightness(8%) contrast(92%);
 }

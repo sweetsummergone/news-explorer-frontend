@@ -1,9 +1,12 @@
 .footer {
+    max-width: 1440px;
     padding: 0 104px;
+    box-sizing: border-box;
     min-height: 80px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: 0 auto;
 }
 
 .footer__copyright {
@@ -26,6 +29,7 @@
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
+    text-decoration: none;
     line-height: 24px;
     color: #1A1B22;
 }
@@ -57,6 +61,7 @@
 
 @media screen and (max-width: 1280px) {
     .footer {
+        max-width: 768px;
         padding: 0 40px;
     }
 
@@ -69,7 +74,7 @@
     }
 }
 
-@media screen and (max-width: 768px) { 
+@media screen and (max-width: 767px) { 
     .footer {
         padding: 20px 16px;
         display: grid;

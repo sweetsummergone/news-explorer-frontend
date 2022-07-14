@@ -1,7 +1,10 @@
 .news {
+    max-width: 1440px;
     display: flex;
     flex-direction: column;
+    margin: 0 auto;
     padding: 62px 104px;
+    box-sizing: border-box;
     background: #F5F6F7;
 }
 
@@ -43,6 +46,21 @@
     font-weight: 500;
     font-size: 18px;
     line-height: 24px;
+}
+
+.news__more--default {
+    background-color: #FFFFFF;
+    color: #1A1B22;
+}
+
+.news__more--default:hover {
+    background-color: #E8E8E8;
+    opacity: 0.9;
+}
+
+.news__more--default:active {
+    background-color: #E8E8E8;
+    opacity: 1;
 }
 
 .news__image-not-found {
@@ -89,6 +107,7 @@
 
 @media screen and (max-width: 1280px) {
     .news {
+        max-width: 768px;
         padding: 40px;
     }
 
@@ -112,7 +131,7 @@
     }
 }
 
-@media screen and (max-width: 768px) { 
+@media screen and (max-width: 767px) { 
     .news {
         padding: 16px;
     }

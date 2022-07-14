@@ -15,7 +15,7 @@
     color: #FFFFFF;
 }
 
-.navigation__element_dark {
+.navigation__element--dark {
     color: #1A1B22;
 }
 
@@ -24,11 +24,11 @@
     border-bottom: #FFFFFF 3px solid;
 }
 
-.navigation__element_active_dark {
+.navigation__element_active--dark {
     border-bottom: #1A1B22 3px solid;
 }
 
-.navigation__auth_button {
+.navigation__auth-button {
     margin: auto;
     margin-right: 104px;
     padding: 8px 12px;
@@ -46,7 +46,7 @@
     line-height: 24px;
 }
 
-.navigation__auth_button_dark {
+.navigation__auth-button--dark {
     padding: 0 16px;
     display: flex;
     align-items: center;
@@ -57,7 +57,7 @@
 }
 
 @media screen and (max-width: 1280px) {
-    .navigation__auth_button {
+    .navigation__auth-button {
         margin-right: 40px;
         min-width: 152px;
         min-height: 40px;
@@ -69,12 +69,12 @@
         font-size: 16px;
     }
 
-    .navigation__auth_button_dark {
+    .navigation__auth-button--dark {
         min-width: 100px;
     }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
     .navigation {
         position: absolute;
         background-color:  #1A1B22;;
@@ -84,7 +84,7 @@
         min-width: 100%;
     }
 
-    .navigation__dark {
+    .navigation--dark {
         background-color: #FFFFFF;
         padding-top: 0;
     }
@@ -98,7 +98,7 @@
         border: none;
     }
 
-    .navigation__auth_button {
+    .navigation__auth-button {
         justify-content: center;
         margin: 6px auto 24px auto;
         min-width: 288px;

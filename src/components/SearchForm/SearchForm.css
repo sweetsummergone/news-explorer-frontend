@@ -1,8 +1,8 @@
 
-.search__form {
+.search {
+    max-width: 1440px;
     background: url('../../images/background.png');
     background-repeat: no-repeat;
-    /* background-attachment: fixed; */
     background-position: center center;
     background-size: cover;
     margin: 0 auto;
@@ -72,7 +72,6 @@
     position: absolute;
     right: 0;
     min-width: 168px;
-    color: #FFFFFF;
 }
 
 .button {
@@ -99,18 +98,29 @@
     background-color: #347EFF;
 }
 
+.button:active {
+    background-color: #2A65CC;
+}
 
 .disabled {
-    background-color: #E8E8E8;
+    background-color: #E6E8EB;
     cursor: default;
-    color: #1A1B22;
+    color: #B6BCBF;
 }
 
 .disabled:hover {
-    background-color: #E8E8E8;
+    background-color: #E6E8EB;
+}
+
+.disabled:active {
+    background-color: #E6E8EB;
 }
 
 @media screen and (max-width: 1280px) {
+    .search {
+        max-width: 768px;
+    }
+    
     .search__title {
         max-width: 452px;
         max-height: 80px;
@@ -147,7 +157,7 @@
     }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
     .search__title {
         max-width: 285px;
         padding-top: 86px;
