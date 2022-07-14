@@ -1,6 +1,9 @@
 
 .search__form {
-    background: url('../../images/background.png') no-repeat;
+    background: url('../../images/background.png');
+    background-repeat: no-repeat;
+    /* background-attachment: fixed; */
+    background-position: center center;
     background-size: cover;
     margin: 0 auto;
     display: flex;
@@ -107,7 +110,7 @@
     background-color: #E8E8E8;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1280px) {
     .search__title {
         max-width: 452px;
         max-height: 80px;
@@ -144,7 +147,7 @@
     }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 768px) {
     .search__title {
         max-width: 285px;
         padding-top: 86px;

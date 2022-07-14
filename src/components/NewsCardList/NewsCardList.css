@@ -1,7 +1,7 @@
 .news {
     display: flex;
     flex-direction: column;
-    padding: 80px 104px;
+    padding: 62px 104px;
     background: #F5F6F7;
 }
 
@@ -26,7 +26,6 @@
 .news__list {
     list-style: none;
     margin: 0;
-    margin-top: 64px;
     padding: 0;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
@@ -87,7 +86,7 @@
     color: #B6BCBF;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1280px) {
     .news {
         padding: 40px;
     }
@@ -112,7 +111,7 @@
     }
 }
 
-@media screen and (max-width: 320px) { 
+@media screen and (max-width: 768px) { 
     .news {
         padding: 16px;
     }

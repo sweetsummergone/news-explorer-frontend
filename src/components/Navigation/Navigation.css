@@ -56,7 +56,7 @@
     border: 1px solid #1A1B22;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1280px) {
     .navigation__auth_button {
         margin-right: 40px;
         min-width: 152px;
@@ -74,7 +74,7 @@
     }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 768px) {
     .navigation {
         position: absolute;
         background-color:  #1A1B22;;
