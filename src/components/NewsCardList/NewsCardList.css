@@ -111,3 +111,23 @@
         box-shadow: none;
     }
 }
+
+@media screen and (max-width: 320px) { 
+    .news {
+        padding: 16px;
+    }
+
+    .news__title {
+        margin-top: 32px;
+        margin-bottom: 52px;
+    }
+
+    .news__list {
+        margin-top: 6px;
+    }
+
+    .news__more { 
+        min-width: 288px;
+        margin-bottom: 24px;
+    }
+}

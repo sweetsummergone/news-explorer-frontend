@@ -9,7 +9,7 @@
 
 .modal__overlay {
     position: fixed;
-    z-index: 0;
+    z-index: 1;
     min-width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
@@ -121,10 +121,10 @@
     padding: 0;
     cursor: pointer;
     position: absolute;
-    right: -40px;
-    top: -40px;
-    min-height: 40px;
-    min-width: 40px;
+    right: -30px;
+    top: -30px;
+    min-height: 24px;
+    min-width: 24px;
     transform: rotate(-45deg);
     border: none;
     /* transition */
@@ -139,3 +139,27 @@
     opacity: 0.6;
   }
   
+@media screen and (max-width: 320px) {
+    .modal__content {
+        top: calc(50% + 30px);
+        min-width: 320px;
+        min-height: 90%;
+    }
+
+    .modal__input-group {
+        max-width: 288px;
+    }
+
+    .modal__input {
+        min-width: 288px;
+    }
+
+    .modal__button-save {
+        min-width: 288px;
+    }
+
+    .modal__button-close {
+        top: -50px;
+        right: 16px;
+    }
+}

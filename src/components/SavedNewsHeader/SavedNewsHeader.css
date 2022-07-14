@@ -6,3 +6,7 @@
 .header__title_dark {
     color: #1A1B22;
 }
+
+.header__toggler_dark {
+    filter: invert(7%) sepia(13%) saturate(1%) hue-rotate(254deg) brightness(8%) contrast(92%);
+}

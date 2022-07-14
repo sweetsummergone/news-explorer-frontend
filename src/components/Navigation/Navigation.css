@@ -73,3 +73,35 @@
         min-width: 100px;
     }
 }
+
+@media screen and (max-width: 320px) {
+    .navigation {
+        position: absolute;
+        background-color:  #1A1B22;;
+        z-index: 1;
+        flex-direction: column;
+        padding-top: 56px;
+        min-width: 100%;
+    }
+
+    .navigation__dark {
+        background-color: #FFFFFF;
+        padding-top: 0;
+    }
+
+    .navigation__element {
+        margin: 0;
+        padding: 16px;
+    }
+
+    .navigation__element_active {
+        border: none;
+    }
+
+    .navigation__auth_button {
+        justify-content: center;
+        margin: 6px auto 24px auto;
+        min-width: 288px;
+        min-height: 56px;
+    }
+}

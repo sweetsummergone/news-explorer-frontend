@@ -101,3 +101,24 @@
         -webkit-line-clamp: 4;
     }
 }
+
+@media screen and (max-width: 320px) {
+    .card {
+        max-width: 288px;
+        height: 440px;
+    }
+
+    .card__image { 
+        width: 288px;
+        height: 196px;
+    }
+
+    .card__content {
+        padding: 16px;
+        height: calc(440px - 196px);
+    }
+
+    .card__title {
+        -webkit-line-clamp: 2;
+    }
+}
