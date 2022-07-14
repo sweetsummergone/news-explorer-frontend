@@ -21,7 +21,7 @@ export default function NewsCardList({ newsObj, loadingStatus: isLoading }) {
                         return <li key={element.id}><NewsCard image={element.image} category={element.category} date={element.date} title={element.title} subtitle={element.subtitle} source={element.source} isSearch={true}/></li>
                     })}
                 </ul>
-                <button disabled={page * 3 >= newsObj.length} className={page * 3 < newsObj.length ? "news__more button" : "news__more button disabled"} onClick={() => setPage(page + 1)}>Show more</button>
+                <button disabled={page * 3 >= newsObj.length} className={page * 3 < newsObj.length ? "news__more news__more--default button" : "news__more button disabled"} onClick={() => setPage(page + 1)}>Show more</button>
             </section>
         )
     } else if (newsObj.length === 0) {

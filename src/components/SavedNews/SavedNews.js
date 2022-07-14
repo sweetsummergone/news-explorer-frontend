@@ -26,10 +26,10 @@ export default function SavedNews() {
                     <p className="news__loading-title">Searching for news...</p>
                 </section>}
             {!isLoading && newsObj.length > 0 &&
-                <>
+                <article className="saved">
                     <div className="saved__header">
-                        <p className="saved__mark">Saved articles</p>
-                        <h2 className="news__title saved__title">Elise, you have {`${newsObj.length}`} saved articles</h2>
+                        <h2 className="saved__mark">Saved articles</h2>
+                        <h1 className="saved__title">Elise, you have {`${newsObj.length}`} saved articles</h1>
                         <p className="saved__subtitle">By keywords: <span>Nature, Yellowstone, and 2 other</span></p>
                     </div>
                     <section className="news saved__news">
@@ -40,17 +40,17 @@ export default function SavedNews() {
                         </ul>
                         {page * 9 < newsObj.length && <button className="news__more button" onClick={() => setPage(page + 1)}>Show more</button>}
                     </section>
-                </>
+                </article>
             }
             {
                 !isLoading && newsObj.length === 0 &&
-                <>
+                <article className="saved">
                     <div className="saved__header">
-                        <p className="saved__mark">Saved articles</p>
-                        <h2 className="news__title saved__title">Elise, you don't have any saved articles</h2>
+                        <h2 className="saved__mark">Saved articles</h2>
+                        <h1 className="saved__title">Elise, you don't have any saved articles</h1>
                         <Link to="/" className="saved__subtitle saved__link-back">Return to Home page</Link>
                     </div>
-                </>
+                </article>
             }
             <Footer />
         </>

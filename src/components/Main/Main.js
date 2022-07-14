@@ -31,6 +31,7 @@ export default function Main() {
             <NewsCardList newsObj={news} loadingStatus={isLoading}/>
             {currentModal === "signup" && <PopupWithForm name="signup" onSwitch={setCurrentModal}/>}
             {currentModal === "signin" && <PopupWithForm name="signin" onSwitch={setCurrentModal}/>}
+            {currentModal === "success" && <PopupWithForm name="success" onSwitch={setCurrentModal}/>}
             <About />
             <Footer />
         </>

@@ -6,7 +6,7 @@ import Cross from "../../images/plus.svg";
 
 export default function Header({ onSignUp }) {
     const [isOpened, setIsOpened] = useState(false);
-    const WIDTH_MOBILE = 768;
+    const WIDTH_MOBILE = 767;
 
     const { width } = useWindowDimensions();
 
