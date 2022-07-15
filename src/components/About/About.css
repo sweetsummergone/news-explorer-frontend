@@ -18,7 +18,7 @@
 }
 
 .about__title {
-    font-family: 'Roboto Slab';
+    font-family: 'Roboto Slab', Arial, Helvetica, sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 40px;
@@ -27,7 +27,7 @@
 }
 
 .about__desc {
-    font-family: 'Roboto';
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
@@ -68,7 +68,7 @@
     }
 }
 
-@media screen and (max-width: 767px) { 
+@media screen and (max-width: card__action-image-wrapperpx) { 
     .about {
         padding: 0 16px;
         flex-direction: column;

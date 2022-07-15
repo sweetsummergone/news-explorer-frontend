@@ -10,10 +10,10 @@ export default function Navigation({auth, onSignUp, isOpened}) {
         </nav>
     )
     return (
-        isOpened && <nav className="navigation navigation--dark">
-            <Link className="navigation__element navigation__element--dark" to='/'>Home</Link>
-            <Link className="navigation__element navigation__element--dark navigation__element_active navigation__element_active--dark" to='/saved-news'>Saved articles</Link>
-            <button className="navigation__auth-button navigation__auth-button--dark">Elise <img src={Logout} alt="logout"/></button>
+        isOpened && <nav className="navigation navigation_theme--dark">
+            <Link className="navigation__element navigation__element_theme--dark" to='/'>Home</Link>
+            <Link className="navigation__element navigation__element_theme--dark navigation__element_active navigation__element_active_theme--dark" to='/saved-news'>Saved articles</Link>
+            <button className="navigation__auth-button navigation__auth-button_theme--dark">Elise <img src={Logout} alt="logout"/></button>
         </nav>
     )
 }

@@ -18,14 +18,14 @@ export default function NewsCard({ image, category, date, title, subtitle, sourc
             <div className="card__controls">
                 {isSearch ? 
                 <div className="card__action">
-                    <div className="card__action-image-wrapper" onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
+                    <div className="card__action_image-wrapper" onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
                         <img onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} className="card__action_image" src={Bookmark} alt="save as bookmark" />
                     </div>
                     {isHovering && <p className="card__action_tooltip">Sign in to save articles</p>}
                 </div>
                 :
                 <div className="card__action">
-                    <div className="card__action-image-wrapper" onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
+                    <div className="card__action_image-wrapper" onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
                         <img className="card__action_image" src={Trash} alt="delete as trash can" />
                     </div>
                     {isHovering && <p className="card__action_tooltip">Remove from saved</p>}

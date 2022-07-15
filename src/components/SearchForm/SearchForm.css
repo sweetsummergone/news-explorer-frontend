@@ -15,9 +15,9 @@
     margin: 0;
     max-width: 608px;
     max-height: 128px;
-    font-family: "Inter";
+    font-family: "Inter", Trebuchet MS, sans-serif;
     padding-top: 160px;
-    font-family: 'Roboto Slab';
+    font-family: 'Roboto Slab', Arial, Helvetica, sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 60px;
@@ -29,7 +29,7 @@
     margin: 0;
     margin-top: 32px;
     max-width: 608px;
-    font-family: 'Roboto';
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
@@ -53,7 +53,7 @@
     border: 1px solid #D1D2D6;
     backdrop-filter: blur(8px);
     border-radius: 100px;
-    font-family: 'Roboto';
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -82,7 +82,7 @@
     min-height: 64px;
     box-shadow: 0px 5px 15px rgba(14, 26, 57, 0.2);
     border-radius: 100px;
-    font-family: 'Roboto';
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 18px;

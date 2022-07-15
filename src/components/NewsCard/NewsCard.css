@@ -23,7 +23,7 @@
     background-color: #FFF;
     padding: 8px 24px;
     box-sizing: border-box;
-    font-family: 'Roboto';
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
@@ -38,7 +38,7 @@
     column-gap: 5px;
 }
 
-.card__action-image-wrapper {
+.card__action_image-wrapper {
     min-width: 24px;
     max-height: 24px;
     background-color: #FFF;
@@ -51,7 +51,7 @@
     max-height: 24px;
 }
 
-.card__action-image-wrapper:hover img {
+.card__action_image-wrapper:hover img {
     filter: invert(7%) sepia(13%) saturate(1%) hue-rotate(254deg) brightness(8%) contrast(92%);
 }
 
@@ -63,7 +63,7 @@
     padding: 7px 24px;
     box-sizing: border-box;
     border-radius: 8px;
-    font-family: 'Roboto';
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 12px;
@@ -88,7 +88,7 @@
 
 .card__date {
     margin: 0;
-    font-family: 'Source Sans Pro';
+    font-family: 'Source Sans Pro', 'Times New Roman', Georgia, serif;
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
@@ -98,7 +98,7 @@
 
 .card__title {
     margin: 0;
-    font-family: 'Roboto Slab';
+    font-family: 'Roboto Slab', Arial, Helvetica, sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 26px;
@@ -112,7 +112,7 @@
 
 .card__subtitle {
     margin: 0;
-    font-family: 'Roboto';
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -126,7 +126,7 @@
 
 .card__source {
     margin: 0;
-    font-family: 'Roboto Slab';
+    font-family: 'Roboto Slab', Arial, Helvetica, sans-serif;
     font-style: normal;
     font-weight: 700;
     font-size: 16px;
@@ -140,7 +140,7 @@
     color: #B6BCBF;
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1439px) {
     .card {
         max-width: 224px;
         height: 420px;
@@ -167,7 +167,7 @@
     }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 769px) {
     .card {
         max-width: 288px;
         height: 440px;

@@ -11,16 +11,16 @@ export default function SavedNewsHeader() {
     const { width } = useWindowDimensions();
 
     if (width > WIDTH_MOBILE) return (
-        <header className="header header_--dark">
-            <p className="header__title header__title--dark">NewsExplorer</p>
+        <header className="header header__theme--dark">
+            <p className="header__title header__title_theme--dark">NewsExplorer</p>
             <Navigation isOpened={true} auth />
         </header>
     )
     return (
         <>
-            <header className="header header_--dark">
-                <p className="header__title header__title--dark">NewsExplorer</p>
-                <img onClick={() => setIsOpened(!isOpened)} className="header__toggler header__toggler--dark" alt="menu" src={isOpened ? Cross : Burger} style={{transform: isOpened && "rotate(45deg)"}}/>
+            <header className="header header__theme--dark">
+                <p className="header__title header__title_theme--dark">NewsExplorer</p>
+                <img onClick={() => setIsOpened(!isOpened)} className="header__toggler header__toggler_theme--dark" alt="menu" src={isOpened ? Cross : Burger} style={{transform: isOpened && "rotate(45deg)"}}/>
             </header>
             {isOpened && 
                 <>    

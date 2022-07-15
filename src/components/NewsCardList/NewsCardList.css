@@ -19,7 +19,7 @@
 .news__title {
     margin: 0;
     margin-bottom: 64px;
-    font-family: 'Roboto Slab';
+    font-family: 'Roboto Slab', Arial, Helvetica, sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 40px;
@@ -41,7 +41,7 @@
     margin: 0 auto;
     margin-top: 64px;
     min-width: 288px;
-    font-family: 'Roboto';
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 18px;
@@ -72,7 +72,7 @@
 .news__title-not-found {
     margin: 0;
     margin-top: 31.5px;
-    font-family: 'Roboto Slab';
+    font-family: 'Roboto Slab', Arial, Helvetica, sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 26px;
@@ -84,7 +84,7 @@
     margin: 0;
     margin-top: 16px;
     max-width: 240px;
-    font-family: 'Roboto';
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
@@ -96,7 +96,7 @@
 .news__loading-title {
     margin: 0;
     margin-top: 24px;
-    font-family: 'Roboto';
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
@@ -105,9 +105,9 @@
     color: #B6BCBF;
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1439px) {
     .news {
-        max-width: 768px;
+        max-width: 1184px;
         padding: 40px;
     }
 
@@ -118,7 +118,7 @@
 
     .news__list {
         margin-top: 32px;
-        grid-template-columns: repeat(auto-fill, minmax(224px, 1fr));
+        grid-template-columns: repeat(3, minmax(224px, 1fr));
         row-gap: 8px;
         column-gap: 8px;
     }
@@ -143,6 +143,7 @@
 
     .news__list {
         margin-top: 6px;
+        grid-template-columns: repeat(auto-fill, minmax(224px, 1fr));
     }
 
     .news__more { 

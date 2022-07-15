@@ -7,7 +7,7 @@
     cursor: pointer;
     margin: 0;
     margin: 30px 42px 0 auto;
-    font-family: 'Roboto';
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 18px;
@@ -15,7 +15,7 @@
     color: #FFFFFF;
 }
 
-.navigation__element--dark {
+.navigation__element_theme--dark {
     color: #1A1B22;
 }
 
@@ -24,7 +24,7 @@
     border-bottom: #FFFFFF 3px solid;
 }
 
-.navigation__element_active--dark {
+.navigation__element_active_theme--dark {
     border-bottom: #1A1B22 3px solid;
 }
 
@@ -39,14 +39,14 @@
     min-height: 48px;
     border: 1px solid #FFFFFF;
     border-radius: 100px;
-    font-family: 'Roboto';
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 18px;
     line-height: 24px;
 }
 
-.navigation__auth-button--dark {
+.navigation__auth-button_theme--dark {
     padding: 0 16px;
     display: flex;
     align-items: center;
@@ -69,12 +69,12 @@
         font-size: 16px;
     }
 
-    .navigation__auth-button--dark {
+    .navigation__auth-button_theme--dark {
         min-width: 100px;
     }
 }
 
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 767px) {
     .navigation {
         position: absolute;
         background-color:  #1A1B22;;
@@ -84,7 +84,7 @@
         min-width: 100%;
     }
 
-    .navigation--dark {
+    .navigation_theme--dark {
         background-color: #FFFFFF;
         padding-top: 0;
     }
