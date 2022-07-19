@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Preloader from "../Preloader/Preloader";
+import api from "../../utils/NewsApi";
 
 export default function SearchForm({ onSearch, onLoading, loadingStatus: isLoading }) {
     const [query, setQuery] = useState("");
@@ -9,11 +10,17 @@ export default function SearchForm({ onSearch, onLoading, loadingStatus: isLoadi
         e.preventDefault();
         if (query.length > 2 && query !== lastQuery) {
             onLoading(true);
-            setTimeout(() => {
-                onSearch(query);
-                setLastQuery(query);
-                onLoading(false);
-            }, 1500);
+            api.getNews({query})
+                .then(res => {
+                    onSearch(res.articles, query);
+                    setLastQuery(query);
+                })
+                .catch(err => {
+                    console.error(err);
+                })
+                .finally(() => {
+                    onLoading(false);
+                });
         }
     }
 

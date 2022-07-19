@@ -12,29 +12,16 @@ class NewsApi {
         return Promise.reject(`Error ${res.status}: ${res.statusText}`);
     }
 
-    getNews({query}) {
-        return fetch(`${this._baseUrl}/everything`, {
-            headers: this._headers,
-            body: JSON.stringify({query})
+    getNews({query, apiKey='04caf5ef404c43a8bbb985c915609a4d', from = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toLocaleDateString('en-CA'), to = new Date(Date.now()).toLocaleDateString('en-CA'), pageSize=100}) {
+        return fetch(`${this._baseUrl}/everything?q=${query}&apiKey=${apiKey}&from=${from}&to=${to}&pageSize=${pageSize}`, {
+            headers: this._headers
         })
         .then(this._checkResponse);
-    }
-
-    getSavedNews() {
-        // To do
-    }
-
-    saveNews() {
-        // To do
-    }
-
-    removeNews() {
-        // To do
     }
 }
 
 const api = new NewsApi({
-    baseUrl: "http://localhost:3001"
+    baseUrl: "https://nomoreparties.co/news/v2"
 });
   
 export default api;

@@ -3,7 +3,7 @@ import NewsCard from "../NewsCard/NewsCard";
 import Preloader from "../Preloader/Preloader";
 import notFound from "../../images/not_found.svg";
 
-export default function NewsCardList({ newsObj, loadingStatus: isLoading }) {
+export default function NewsCardList({ newsObj, category, loadingStatus: isLoading }) {
     const [page, setPage] = useState(1);
     if (isLoading) {
         return (
@@ -17,8 +17,8 @@ export default function NewsCardList({ newsObj, loadingStatus: isLoading }) {
             <section className="news">
                 <h2 className="news__title">Search results</h2>
                 <ul className="news__list">
-                    {newsObj.slice(0, page * 3).map(element => {
-                        return <li key={element.id}><NewsCard image={element.image} category={element.category} date={element.date} title={element.title} subtitle={element.subtitle} source={element.source} isSearch={true}/></li>
+                    {newsObj.slice(0, page * 3).map((element, i) => {
+                        return <li key={i}><NewsCard image={element.urlToImage} category={category} date={element.publishedAt} title={element.title} subtitle={element.description} source={element.source.name} isSearch={true}/></li>
                     })}
                 </ul>
                 <button disabled={page * 3 >= newsObj.length} className={page * 3 < newsObj.length ? "news__more news__more--default button" : "news__more button disabled"} onClick={() => setPage(page + 1)}>Show more</button>
