@@ -1,0 +1,174 @@
+.modal {
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    height: 100%;
+}
+
+.modal__overlay {
+    position: fixed;
+    z-index: 1;
+    min-width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal_popup {
+    position: fixed;
+}
+
+.modal__form {
+    display: flex;
+    flex-direction: column;
+    max-width: 358px;
+    margin: 34px auto 36.51px auto;
+}
+
+.modal__title {
+    margin: 0;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 29px;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 28px;
+    color: #1A1B22;
+}
+
+.modal__input {
+    outline: none;
+    min-width: 358px;
+    padding: 9px 0;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    font-family: 'Inter', Trebuchet MS, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
+}
+
+.modal__input:focus {
+    border-bottom: 1px solid #000000;
+}
+
+.modal__input::placeholder {
+    opacity: 0.2;
+}
+
+.modal__input-group:nth-of-type(1) {
+    margin-top: 22px;
+}
+
+.modal__input-group:not(:nth-of-type(1)) {
+    margin-top: 31px;
+}
+
+.modal__input-group label {
+    font-family: 'Inter', Trebuchet MS, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+
+    color: #2F71E5;
+}
+
+.modal__content {
+    color: #000;
+    min-width: 430px;
+    margin: 0 auto;
+    background: #fff;
+    position: absolute;
+    z-index: 100;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+}
+
+.modal__button-save {
+    padding: 0;
+    margin-top: 47px;
+    min-width: 360px;
+}
+
+.modal__switch {
+    margin: 0 auto;
+    margin-top: 16px;
+    font-family: 'Inter', Trebuchet MS, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
+}
+
+.modal__switch--success {
+    font-size: 18px;
+    line-height: 22px;
+    margin: 0;
+    margin-top: 14px;
+}
+
+.modal__switch span {
+    color: #2F71E5;
+    cursor: pointer;
+}
+
+.modal__button-close {
+    background: url("../../images/plus.svg") no-repeat center;
+    background-size: cover;
+    padding: 0;
+    cursor: pointer;
+    position: absolute;
+    right: -30px;
+    top: -30px;
+    min-height: 24px;
+    min-width: 24px;
+    transform: rotate(-45deg);
+    border: none;
+    /* transition */
+    transition: opacity 0.35s ease-in-out;
+    -moz-transition: opacity 0.35s ease-in-out;
+    -webkit-transition: opacity 0.35s ease-in-out;
+    -o-transition: opacity 0.35s ease-in-out;
+    -ms-transition: opacity 0.35s ease-in-out;
+  }
+  
+  .modal__button-close:hover {
+    opacity: 0.6;
+  }
+  
+@media screen and (max-width: 767px) {
+    .modal__content {
+        top: calc(50% + 30px);
+        min-width: 320px;
+        min-height: 90%;
+    }
+
+    .modal__input-group {
+        max-width: 288px;
+    }
+
+    .modal__input {
+        min-width: 288px;
+    }
+
+    .modal__button-save {
+        min-width: 288px;
+    }
+
+    .modal__button-close {
+        top: -50px;
+        right: 16px;
+    }
+}

@@ -1,0 +1,88 @@
+.about {
+    max-width: 1440px;
+    padding: 0 104px;
+    box-sizing: border-box;
+    margin: 80px auto;
+    display: flex;
+}
+
+.about__image {
+    width: 464px;
+    height: 464px;
+    border-radius: 1000px;
+}
+
+.about__bio {
+    margin-top: calc(131px - 80px);
+    margin-left: 56px;
+}
+
+.about__title {
+    font-family: 'Roboto Slab', Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 46px;
+    color: #1A1B22;
+}
+
+.about__desc {
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    color: #1A1B22;
+}
+
+@media screen and (max-width: 1280px) {
+    .about {
+        max-width: 768px;
+        padding: 0 40px;
+        margin: 40px auto;
+    }
+
+    .about__image {
+        margin-top: 20px;
+        width: 232px;
+        height: 232px;
+    }
+
+    .about__bio {
+        margin-top: 0;
+        margin-left: 32px;
+        max-width: 424px;
+    }
+
+    .about__title {
+        margin: 0;
+        font-size: 30px;
+        line-height: 40px;
+    }
+
+    .about__desc {
+        font-size: 18px;
+        line-height: 24px;
+        margin: 0;
+        margin-top: 10px;
+    }
+}
+
+@media screen and (max-width: card__action-image-wrapperpx) { 
+    .about {
+        padding: 0 16px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about__image {
+        margin-top: 32px;
+        width: 272px;
+        height: 272px;
+    }
+
+    .about__bio {
+        margin: 0;
+        margin-top: 24px;
+    }
+}

@@ -1,0 +1,107 @@
+.navigation {
+    display: flex;
+}
+
+.navigation__element {
+    text-decoration: none;
+    cursor: pointer;
+    margin: 0;
+    margin: 30px 42px 0 auto;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    color: #FFFFFF;
+}
+
+.navigation__element_theme--dark {
+    color: #1A1B22;
+}
+
+.navigation__element_active {
+    cursor: default;
+    border-bottom: #FFFFFF 3px solid;
+}
+
+.navigation__element_active_theme--dark {
+    border-bottom: #1A1B22 3px solid;
+}
+
+.navigation__auth-button {
+    margin: auto;
+    margin-right: 104px;
+    padding: 8px 12px;
+    cursor: pointer;
+    background: none;
+    color: white;
+    min-width: 176px;
+    min-height: 48px;
+    border: 1px solid #FFFFFF;
+    border-radius: 100px;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.navigation__auth-button_theme--dark {
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    min-width: 112px;
+    color: #1A1B22;
+    border: 1px solid #1A1B22;
+}
+
+@media screen and (max-width: 1280px) {
+    .navigation__auth-button {
+        margin-right: 40px;
+        min-width: 152px;
+        min-height: 40px;
+        font-size: 16px;
+    }
+
+    .navigation__element {
+        margin: 20px 16px 0 auto;
+        font-size: 16px;
+    }
+
+    .navigation__auth-button_theme--dark {
+        min-width: 100px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .navigation {
+        position: absolute;
+        background-color:  #1A1B22;;
+        z-index: 1;
+        flex-direction: column;
+        padding-top: 56px;
+        min-width: 100%;
+    }
+
+    .navigation_theme--dark {
+        background-color: #FFFFFF;
+        padding-top: 0;
+    }
+
+    .navigation__element {
+        margin: 0;
+        padding: 16px;
+    }
+
+    .navigation__element_active {
+        border: none;
+    }
+
+    .navigation__auth-button {
+        justify-content: center;
+        margin: 6px auto 24px auto;
+        min-width: 288px;
+        min-height: 56px;
+    }
+}
