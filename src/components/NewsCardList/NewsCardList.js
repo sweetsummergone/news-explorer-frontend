@@ -3,13 +3,21 @@ import NewsCard from "../NewsCard/NewsCard";
 import Preloader from "../Preloader/Preloader";
 import notFound from "../../images/not_found.svg";
 
-export default function NewsCardList({ newsObj, category, loadingStatus: isLoading }) {
+export default function NewsCardList({ onError, newsObj, category, loadingStatus: isLoading }) {
     const [page, setPage] = useState(1);
     if (isLoading) {
         return (
             <section className="news news__loading">
                 <Preloader />
                 <p className="news__loading-title">Searching for news...</p>
+            </section>
+        )
+    } else if (onError) {
+        return (
+            <section className="news news__not-found">
+                <img className="news__image-not-found" src={notFound} alt="Sad guy. Not found!" />
+                <h3 className="news__title-not-found">Sorry, something went wrong during the request</h3>
+                <p className="news__subtitle-not-found" style={{maxWidth: 700}}>There may be a connection issue or the server may be down. Please try again later.</p>
             </section>
         )
     } else if (newsObj.length !== 0 && newsObj[0] !== -1) {

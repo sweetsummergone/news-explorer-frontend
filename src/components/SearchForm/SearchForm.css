@@ -15,7 +15,6 @@
     margin: 0;
     max-width: 608px;
     max-height: 128px;
-    font-family: "Inter", Trebuchet MS, sans-serif;
     padding-top: 160px;
     font-family: 'Roboto Slab', Arial, Helvetica, sans-serif;
     font-style: normal;
@@ -66,6 +65,15 @@
 
 .searchbar__input::placeholder {
     color: #B6BCBF;
+}
+
+.searchbar__error {
+    position: absolute;
+    font-family: "Inter", Trebuchet MS, sans-serif;
+    top: 70px;
+    left: 20px;
+    color: rgb(237, 195, 128);
+    text-shadow: 4px 3px 0 #7A7A7A;
 }
 
 .searchbar__button {
