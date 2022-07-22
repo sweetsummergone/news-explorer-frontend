@@ -111,6 +111,7 @@
 }
 
 .disabled {
+    box-shadow: none;
     background-color: #E6E8EB;
     cursor: default;
     color: #B6BCBF;

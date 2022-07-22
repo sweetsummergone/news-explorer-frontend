@@ -40,7 +40,6 @@ export default function App() {
       const token = localStorage.getItem("jwt");
       checkToken(token)
         .then((user) => {
-          console.log(user);
           if (user.email) {
             dispatchAuthReducer(ACTIONS.login({ user, token }));
           }

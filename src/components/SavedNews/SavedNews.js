@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import SavedNewsHeader from "../SavedNewsHeader/SavedNewsHeader";
 import Footer from "../Footer/Footer";
@@ -6,7 +6,10 @@ import Preloader from "../Preloader/Preloader";
 import NewsCard from "../NewsCard/NewsCard";
 import { newsObj } from "../../constants/cards";
 
+import CurrentUserContext from "../../contexts/CurrentUserContext";
+
 export default function SavedNews() {
+    const { currentUser } = useContext(CurrentUserContext);
     const [isLoading, setIsLoading] = useState(false);
     const [page, setPage] = useState(1);
 
@@ -29,7 +32,7 @@ export default function SavedNews() {
                 <article className="saved">
                     <div className="saved__header">
                         <h2 className="saved__mark">Saved articles</h2>
-                        <h1 className="saved__title">Elise, you have {`${newsObj.length}`} saved articles</h1>
+                        <h1 className="saved__title">{currentUser.name}, you have {`${newsObj.length}`} saved articles</h1>
                         <p className="saved__subtitle">By keywords: <span>Nature, Yellowstone, and 2 other</span></p>
                     </div>
                     <section className="news saved__news">

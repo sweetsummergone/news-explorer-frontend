@@ -33,7 +33,7 @@ export default function Main() {
 
     return (
         <>
-            <Header onSignUp={setCurrentModal}/>
+            <Header onSignUp={setCurrentModal} isMain={true}/>
             <SearchForm onError={setErrorText} onSearch={createNewsList} onLoading={handleLoading} loadingStatus={isLoading}/>
             <NewsCardList onError={errorText} newsObj={news} category={category} loadingStatus={isLoading}/>
             {currentModal === "signup" && <PopupWithForm name="signup" onSwitch={setCurrentModal}/>}

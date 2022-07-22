@@ -14,7 +14,7 @@ export default function PopupWithForm({ name, onSwitch }) {
           onClick={() => onSwitch("")}
         />
         {name === "signup" && <FormSignUp onSwitch={onSwitch} />}
-        {name === "signin" && <FormSignIn onSwitch={onSwitch} />}
+        {name === "signin" && <FormSignIn onSwitch={onSwitch} closeModal={() => onSwitch("")}/>}
         {name === "success" && <FormSucess onSwitch={onSwitch} />}
       </div>
     </div>
@@ -155,7 +155,7 @@ function FormSignUp({ onSwitch }) {
   );
 }
 
-function FormSignIn({ onSwitch }) {
+function FormSignIn({ onSwitch, closeModal }) {
   const [tempUser, setTempUser] = useState({
     email: "",
     password: "",
@@ -212,6 +212,7 @@ function FormSignIn({ onSwitch }) {
       .then((res) => {
         if (!res.message && !res.error) {
           handleUserLogin(res.token);
+          closeModal();
         } else {
           throw new Error(res.message || res.error);
         }
