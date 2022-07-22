@@ -6,7 +6,7 @@ import Trash from "../../images/trash.svg";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
 import mainApi from "../../utils/MainApi";
 
-export default function NewsCard({ image, category, date, title, subtitle, source, link, isSearch, hasSaved }) {
+export default function NewsCard({ onDelete, image, category, date, title, subtitle, source, link, isSearch, hasSaved }) {
     const [isHovering, setIsHovering] = useState(false);
     const [isSaved, setIsSaved] = useState(false);
     const { isAuth } = useContext(CurrentUserContext);
@@ -30,7 +30,7 @@ export default function NewsCard({ image, category, date, title, subtitle, sourc
         mainApi.removeByLink(link)
             .then(() => setIsSaved(false));
     }
-
+    
     useEffect(() => {
         setIsSaved(hasSaved);
     }, [hasSaved]);
@@ -48,7 +48,7 @@ export default function NewsCard({ image, category, date, title, subtitle, sourc
                 </div>
                 :
                 <div className="card__action">
-                    <div className="card__action_image-wrapper" onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
+                    <div className="card__action_image-wrapper" onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} onClick={onDelete}>
                         <img className="card__action_image" src={Trash} alt="delete as trash can" />
                     </div>
                     {isHovering && <p className="card__action_tooltip">Remove from saved</p>}
