@@ -1,3 +1,7 @@
+# Live demo
+
+Available by link -> [https://coolnews.students.nomoredomainssbs.ru/](https://coolnews.students.nomoredomainssbs.ru/)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
