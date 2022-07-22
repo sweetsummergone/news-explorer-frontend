@@ -18,10 +18,6 @@ class MainApi {
         })
         .then(this._checkResponse);
     }
-
-    getAppData() {
-        return Promise.all([this.getUser(), this.getCards()]);
-    }
 }
 
 const api = new MainApi({

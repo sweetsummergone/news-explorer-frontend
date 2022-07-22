@@ -11,11 +11,11 @@ const customFetch = ({ path, method, data }) => {
   }).then((res) => res.json());
 };
 
-export const register = (email, password) => {
+export const register = (email, password, username) => {
   return customFetch({
     path: "/signup",
     method: "POST",
-    data: { email, password },
+    data: { email, password, name: username },
   });
 };
 
@@ -44,5 +44,5 @@ export const checkToken = (token) => {
       "Content-Type": "application/json",
       Authorization: `Bearer ${token}`,
     },
-  }).then((res) => res.json());
+  }).then((res) => res.json())
 };

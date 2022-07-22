@@ -1,4 +1,7 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+
+import CurrentUserContext from "../../contexts/CurrentUserContext";
+import * as auth from "../../utils/auth";
 
 export default function PopupWithForm({ name, onSwitch }) {
   return (
@@ -12,35 +15,85 @@ export default function PopupWithForm({ name, onSwitch }) {
         />
         {name === "signup" && <FormSignUp onSwitch={onSwitch} />}
         {name === "signin" && <FormSignIn onSwitch={onSwitch} />}
-        {name === "success" && <FormSucess onSwitch={onSwitch}/>}
+        {name === "success" && <FormSucess onSwitch={onSwitch} />}
       </div>
     </div>
   );
 }
 
 function FormSignUp({ onSwitch }) {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [username, setUsername] = useState("");
+  const [tempUser, setTempUser] = useState({
+    email: "",
+    password: "",
+    username: "",
+  });
+  const [validation, setValidation] = useState({
+    emailValid: false,
+    passwordValid: false,
+    usernameValid: false,
+    formValid: false,
+  });
+  const [errors, setErrors] = useState({
+    email: "",
+    password: "",
+    username: "",
+  });
 
-  const handleChangeEmail = (e) => {
-    setEmail(e.target.value);
+  const validateField = (fieldName, value) => {
+    let fieldValidationErrors = errors;
+    let emailValid = validation.emailValid;
+    let passwordValid = validation.passwordValid;
+    let usernameValid = validation.usernameValid;
+
+    switch (fieldName) {
+      case "email":
+        emailValid = value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
+        fieldValidationErrors.email = emailValid ? "" : " is invalid";
+        break;
+      case "password":
+        passwordValid = value.length >= 8;
+        fieldValidationErrors.password = passwordValid ? "" : " is too short";
+        break;
+      case "username":
+        usernameValid = value.length >= 2;
+        fieldValidationErrors.username = usernameValid ? "" : " is too short";
+        break;
+      default:
+        break;
+    }
+
+    setValidation({
+      emailValid: emailValid,
+      passwordValid: passwordValid,
+      usernameValid: usernameValid,
+      formValid: emailValid && passwordValid && usernameValid,
+    });
+
+    setErrors(fieldValidationErrors);
   };
 
-  const handleChangePassword = (e) => {
-    setPassword(e.target.value);
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    validateField(name, value);
+    setTempUser({ ...tempUser, [name]: value });
   };
 
-  const handleChangeUsername = (e) => {
-    setUsername(e.target.value);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    auth
+      .register(tempUser.email, tempUser.password, tempUser.username)
+      .then((res) => {
+        if (!res.message && !res.error) {
+          onSwitch("success");
+        } else {
+          throw new Error(res.message || res.error);
+        }
+      })
+      .catch((err) => console.error(err));
   };
 
   return (
-    <form
-      className='modal__form'
-      name='signup'
-      onSubmit={(e) => { e.preventDefault(); console.log(123); onSwitch("success")}}
-    >
+    <form className='modal__form' name='signup' onSubmit={handleSubmit}>
       <h2 className='modal__title'>Sign up</h2>
       <div className='modal__input-group'>
         <label>Email</label>
@@ -53,10 +106,9 @@ function FormSignUp({ onSwitch }) {
           required
           minLength='2'
           maxLength='40'
-          value={email}
-          onChange={handleChangeEmail}
+          value={tempUser.email}
+          onChange={handleChange}
         />
-        <span className='modal__input-error email-input-error' />
       </div>
       <div className='modal__input-group'>
         <label>Password</label>
@@ -69,11 +121,9 @@ function FormSignUp({ onSwitch }) {
           required
           minLength='5'
           maxLength='24'
-          value={password}
-          onChange={handleChangePassword}
+          value={tempUser.password}
+          onChange={handleChange}
         />
-
-        <span className='modal__input-error password-input-error' />
       </div>
       <div className='modal__input-group'>
         <label>Username</label>
@@ -86,12 +136,16 @@ function FormSignUp({ onSwitch }) {
           required
           minLength='2'
           maxLength='40'
-          value={username}
-          onChange={handleChangeUsername}
+          value={tempUser.username}
+          onChange={handleChange}
         />
-        <span className='modal__input-error username-input-error' />
+        <FormErrors formErrors={errors} />
       </div>
-      <button type='submit' className='button modal__button-save'>
+      <button
+        disabled={!validation.formValid}
+        type='submit'
+        className={!validation.formValid ? 'button modal__button-save disabled' : 'button modal__button-save'}
+      >
         Sign up
       </button>
       <p className='modal__switch'>
@@ -102,23 +156,71 @@ function FormSignUp({ onSwitch }) {
 }
 
 function FormSignIn({ onSwitch }) {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [tempUser, setTempUser] = useState({
+    email: "",
+    password: "",
+  });
+  const [validation, setValidation] = useState({
+    emailValid: false,
+    passwordValid: false,
+    formValid: false,
+  });
+  const [errors, setErrors] = useState({
+    email: "",
+    password: "",
+  });
 
-  const handleChangeEmail = (e) => {
-    setEmail(e.target.value);
+  const { handleUserLogin } = useContext(CurrentUserContext);
+
+  const validateField = (fieldName, value) => {
+    let fieldValidationErrors = errors;
+    let emailValid = validation.emailValid;
+    let passwordValid = validation.passwordValid;
+
+    switch (fieldName) {
+      case "email":
+        emailValid = value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
+        fieldValidationErrors.email = emailValid ? "" : " is invalid";
+        break;
+      case "password":
+        passwordValid = value.length >= 8;
+        fieldValidationErrors.password = passwordValid ? "" : " is too short";
+        break;
+      default:
+        break;
+    }
+
+    setValidation({
+      emailValid: emailValid,
+      passwordValid: passwordValid,
+      formValid: emailValid && passwordValid,
+    });
+
+    setErrors(fieldValidationErrors);
   };
 
-  const handleChangePassword = (e) => {
-    setPassword(e.target.value);
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    validateField(name, value);
+    setTempUser({ ...tempUser, [name]: value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    auth
+      .authorize(tempUser.email, tempUser.password)
+      .then((res) => {
+        if (!res.message && !res.error) {
+          handleUserLogin(res.token);
+        } else {
+          throw new Error(res.message || res.error);
+        }
+      })
+      .catch((err) => console.error(err));
   };
 
   return (
-    <form
-      className='modal__form'
-      name='signin'
-      onSubmit={(e) => e.preventDefault()}
-    >
+    <form className='modal__form' name='signin' onSubmit={handleSubmit}>
       <h2 className='modal__title'>Sign in</h2>
       <div className='modal__input-group'>
         <label>Email</label>
@@ -131,8 +233,8 @@ function FormSignIn({ onSwitch }) {
           required
           minLength='2'
           maxLength='40'
-          value={email}
-          onChange={handleChangeEmail}
+          value={tempUser.email}
+          onChange={handleChange}
         />
         <span className='modal__input-error email-input-error' />
       </div>
@@ -147,13 +249,16 @@ function FormSignIn({ onSwitch }) {
           required
           minLength='5'
           maxLength='24'
-          value={password}
-          onChange={handleChangePassword}
+          value={tempUser.password}
+          onChange={handleChange}
         />
-
-        <span className='modal__input-error password-input-error' />
+        <FormErrors formErrors={errors} />
       </div>
-      <button type='submit' className='button modal__button-save'>
+      <button
+        disabled={!validation.formValid}
+        type='submit'
+        className={!validation.formValid ? 'button modal__button-save disabled' : 'button modal__button-save'}
+      >
         Sign in
       </button>
       <p className='modal__switch'>
@@ -175,5 +280,23 @@ function FormSucess({ onSwitch }) {
         <span onClick={() => onSwitch("signin")}>Sign in</span>
       </p>
     </form>
+  );
+}
+
+function FormErrors({ formErrors }) {
+  return (
+    <div className='modal__input-error'>
+      {Object.keys(formErrors).map((fieldName, i) => {
+        if (formErrors[fieldName].length > 0) {
+          return (
+            <p key={i}>
+              {fieldName} {formErrors[fieldName]}
+            </p>
+          );
+        } else {
+          return "";
+        }
+      })}
+    </div>
   );
 }
