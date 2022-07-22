@@ -1,9 +1,15 @@
-import { useState } from "react";
+import { useState, useContext, useEffect } from "react";
 import Bookmark from "../../images/bookmark.svg";
+import BookmarkFilled from "../../images/bookmarkFilled.svg";
 import Trash from "../../images/trash.svg";
 
-export default function NewsCard({ image, category, date, title, subtitle, source, isSearch }) {
+import CurrentUserContext from "../../contexts/CurrentUserContext";
+import mainApi from "../../utils/MainApi";
+
+export default function NewsCard({ image, category, date, title, subtitle, source, link, isSearch, hasSaved }) {
     const [isHovering, setIsHovering] = useState(false);
+    const [isSaved, setIsSaved] = useState(false);
+    const { isAuth } = useContext(CurrentUserContext);
 
     const handleMouseOver = () => {
         setIsHovering(true);
@@ -13,15 +19,32 @@ export default function NewsCard({ image, category, date, title, subtitle, sourc
         setIsHovering(false);
     };
 
+    const handleSave = () => {
+        mainApi.saveArticle({ keyword: category, date, title, text: subtitle, source, link, image })
+            .then(() => {
+                setIsSaved(true);
+            });
+    }
+
+    const handleRemoveByLink = (link) => {
+        mainApi.removeByLink(link)
+            .then(() => setIsSaved(false));
+    }
+
+    useEffect(() => {
+        setIsSaved(hasSaved);
+    }, [hasSaved]);
+
     return (
         <div className="card">
             <div className="card__controls">
                 {isSearch ? 
                 <div className="card__action">
-                    <div className="card__action_image-wrapper" onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
-                        <img onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} className="card__action_image" src={Bookmark} alt="save as bookmark" />
+                    <div className="card__action_image-wrapper" onClick={isAuth && !isSaved ? handleSave : isAuth && isSaved ? () => handleRemoveByLink(link) : undefined}>
+                        {!isSaved && <img onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} className="card__action_image" src={Bookmark} alt="save as bookmark" />}
+                        {isSaved && <img className="card__action_image" src={BookmarkFilled} alt="remove as bookmark" />}
                     </div>
-                    {isHovering && <p className="card__action_tooltip">Sign in to save articles</p>}
+                    {!isAuth && isHovering && <p className="card__action_tooltip">Sign in to save articles</p>}
                 </div>
                 :
                 <div className="card__action">
