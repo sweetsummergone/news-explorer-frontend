@@ -45,7 +45,7 @@ export default function FormSignUp({ onSwitch, onSignUp }) {
             type='password'
             placeholder='Enter your password'
             required
-            minLength='5'
+            minLength='8'
             maxLength='24'
             value={values.password || ""}
             onChange={handleChange}
