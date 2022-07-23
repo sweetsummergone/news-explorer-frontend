@@ -7,7 +7,7 @@ import Cross from "../../images/plus.svg";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
 
 export default function SavedNewsHeader() {
-    const { currentUser } = useContext(CurrentUserContext);
+    const { currentUser, handleUserLogout } = useContext(CurrentUserContext);
     const [isOpened, setIsOpened] = useState(false);
     const WIDTH_MOBILE = 767;
 
@@ -16,7 +16,7 @@ export default function SavedNewsHeader() {
     if (width > WIDTH_MOBILE) return (
         <header className="header header__theme--dark">
             <p className="header__title header__title_theme--dark">NewsExplorer</p>
-            <Navigation name={currentUser.name} isOpened={true} auth />
+            <Navigation onLogout={handleUserLogout} name={currentUser.name} isOpened={true} auth />
         </header>
     )
     return (
@@ -28,7 +28,7 @@ export default function SavedNewsHeader() {
             {isOpened && 
                 <>    
                     <div onClick={() => setIsOpened(false)} className="modal__overlay" />
-                    <Navigation name={currentUser.name} isOpened auth/>
+                    <Navigation onLogout={handleUserLogout} name={currentUser.name} isOpened auth/>
                 </>
             }
         </>

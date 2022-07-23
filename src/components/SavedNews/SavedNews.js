@@ -47,7 +47,7 @@ export default function SavedNews() {
                 <article className="saved">
                     <div className="saved__header">
                         <h2 className="saved__mark">Saved articles</h2>
-                        <h1 className="saved__title">{currentUser.name}, you have {`${news.length}`} saved articles</h1>
+                        <h1 className="saved__title">{currentUser.name}, you have {`${news.length}`} saved article{news.length > 1 && `s`}</h1>
                         <p className="saved__subtitle">By keywords: <span>{ categories.length === 1 ? categories[0] : categories.length === 2 ? categories.join(', ') : `${categories[0]}, ${categories[1]}, and ${categories.length - 2} other` }</span></p>
                     </div>
                     <section className="news saved__news">
