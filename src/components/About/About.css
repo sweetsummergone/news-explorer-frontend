@@ -68,7 +68,7 @@
     }
 }
 
-@media screen and (max-width: card__action-image-wrapperpx) { 
+@media screen and (max-width: 768px) { 
     .about {
         padding: 0 16px;
         flex-direction: column;

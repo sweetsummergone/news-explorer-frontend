@@ -101,10 +101,10 @@
     .footer__element {
         margin: 10px 0;
     }
-    .footer__element:nth-of-type(1) {
+    .footer__element:nth-child(1) {
         grid-area: Home;
     }
-    .footer__element:nth-of-type(2) {
+    .footer__element:nth-child(2) {
         grid-area: Yandex;
     }
     .footer__social {

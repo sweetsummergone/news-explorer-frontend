@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
@@ -6,11 +6,11 @@ import SearchForm from "../SearchForm/SearchForm";
 import About from "../About/About";
 import NewsCardList from "../NewsCardList/NewsCardList";
 
-import { newsObj } from "../../constants/cards";
 import PopupWithForm from "../PopupWithForm/PopupWithForm";
 
-export default function Main() {
+export default function Main({ onSignIn, onSignUp, openSignInModal = false }) {
     const [news, setNews] = useState([-1]);
+    const [errorText, setErrorText] = useState("");
     const [isLoading, setIsLoading] = useState(false);
     const [currentModal, setCurrentModal] = useState("");
 
@@ -18,19 +18,32 @@ export default function Main() {
         setIsLoading(value);
     }
 
-    const findNews = (query) => {
-        setNews(newsObj.filter(element => {
-            return element.category === query;
-        }));
+    const createNewsList = (articles, query) => {
+        localStorage.setItem("lastSearch", JSON.stringify(articles));
+        localStorage.setItem("lastCategory", query);
+        setNews(articles);
     }
+
+    useEffect(() => {
+        if (openSignInModal) {
+            setCurrentModal("signin");
+        }
+    }, [openSignInModal]);
+
+    useEffect(() => {
+        if (localStorage.getItem("lastSearch")) {
+            const news = localStorage.getItem("lastSearch");
+            setNews(JSON.parse(news));
+        }
+    }, []);
 
     return (
         <>
-            <Header onSignUp={setCurrentModal}/>
-            <SearchForm onSearch={findNews} onLoading={handleLoading} loadingStatus={isLoading}/>
-            <NewsCardList newsObj={news} loadingStatus={isLoading}/>
-            {currentModal === "signup" && <PopupWithForm name="signup" onSwitch={setCurrentModal}/>}
-            {currentModal === "signin" && <PopupWithForm name="signin" onSwitch={setCurrentModal}/>}
+            <Header onSignUp={setCurrentModal} isMain={true}/>
+            <SearchForm onError={setErrorText} onSearch={createNewsList} onLoading={handleLoading} loadingStatus={isLoading}/>
+            <NewsCardList onError={errorText} newsObj={news} category={localStorage.getItem("lastCategory")} loadingStatus={isLoading}/>
+            {currentModal === "signup" && <PopupWithForm name="signup" onSwitch={setCurrentModal} onSignUp={onSignUp} />}
+            {currentModal === "signin" && <PopupWithForm name="signin" onSwitch={setCurrentModal} onSignIn={onSignIn} />}
             {currentModal === "success" && <PopupWithForm name="success" onSwitch={setCurrentModal}/>}
             <About />
             <Footer />

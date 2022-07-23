@@ -31,7 +31,11 @@
 .navigation__auth-button {
     margin: auto;
     margin-right: 104px;
-    padding: 8px 12px;
+    margin-top: 14px;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
     cursor: pointer;
     background: none;
     color: white;
@@ -47,11 +51,6 @@
 }
 
 .navigation__auth-button_theme--dark {
-    padding: 0 16px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    min-width: 112px;
     color: #1A1B22;
     border: 1px solid #1A1B22;
 }
