@@ -16,12 +16,12 @@ export default function App() {
     AuthReducer.initialState
   );
 
-  const checkToken = (token) => {
+  const validateToken = (token) => {
     return auth.checkToken(token);
   };
 
   const handleLogin = (token) => {
-    checkToken(token)
+    validateToken(token)
     .then((user) => {
       if (user.email) {
         dispatchAuthReducer(ACTIONS.login({ user, token }));
@@ -38,14 +38,9 @@ export default function App() {
   useEffect(() => {
     if (localStorage.getItem("jwt")) {
       const token = localStorage.getItem("jwt");
-      checkToken(token)
-        .then((user) => {
-          if (user.email) {
-            dispatchAuthReducer(ACTIONS.login({ user, token }));
-          }
-        })
-        .catch((err) => console.error(err));
+      handleLogin(token);
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -61,7 +56,8 @@ export default function App() {
       <BrowserRouter>
         <Fragment>
           <Routes>
-            <Route exact path='/main' element={<Main />} />
+            <Route exact path='/main' element={<Main onSignIn={auth.authorize} onSignUp={auth.register} />} />
+            <Route path='/signin' element={<Main onSignIn={auth.authorize} onSignUp={auth.register} openSignInModal={true} />}/>
             <Route path='/saved-news' element={
               <ProtectedRoute
                 loggedIn={stateAuthReducer.isAuth}

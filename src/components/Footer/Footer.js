@@ -5,7 +5,7 @@ import facebook from "../../images/facebook.svg";
 export default function Footer() {
     return (
         <footer className="footer">
-            <p className="footer__copyright">&copy; 2022 SSG | Powered by News API</p>
+            <p className="footer__copyright">&copy; {new Date().getFullYear()} SSG | Powered by News API</p>
             <nav className="footer__nav">
                 <Link className="footer__element" to="/">Home</Link>
                 <p className="footer__element" onClick={() => window.open("https://practicum100.com")}>Practicum by Yandex</p>

@@ -35,7 +35,7 @@ export default function SearchForm({ onError, onSearch, onLoading, loadingStatus
             <h1 className="search__title">What's going on in the world?</h1>
             <p className="search__subtitle">Find the latest news on any topic and save them in your personal account.</p>
             <div className="searchbar">
-                <input type="search" className="searchbar__input" placeholder="Enter topic" onChange={(e) => setQuery(e.target.value)}></input>
+                <input type="search" className="searchbar__input" placeholder="Enter topic" onChange={(e) => setQuery(e.target.value)} value={query}></input>
                 <span className="searchbar__error">{errorText}</span>
                 <button type="submit" disabled={isLoading} className={isLoading ? `searchbar__button button disabled` : `searchbar__button button`}>{isLoading ? <Preloader size="xs"/> : "Search"}</button>
             </div>

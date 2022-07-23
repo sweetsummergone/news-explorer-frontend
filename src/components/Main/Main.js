@@ -8,7 +8,7 @@ import NewsCardList from "../NewsCardList/NewsCardList";
 
 import PopupWithForm from "../PopupWithForm/PopupWithForm";
 
-export default function Main() {
+export default function Main({ onSignIn, onSignUp, openSignInModal = false }) {
     const [news, setNews] = useState([-1]);
     const [errorText, setErrorText] = useState("");
     const [isLoading, setIsLoading] = useState(false);
@@ -25,6 +25,12 @@ export default function Main() {
     }
 
     useEffect(() => {
+        if (openSignInModal) {
+            setCurrentModal("signin");
+        }
+    }, [openSignInModal]);
+
+    useEffect(() => {
         if (localStorage.getItem("lastSearch")) {
             const news = localStorage.getItem("lastSearch");
             setNews(JSON.parse(news));
@@ -36,8 +42,8 @@ export default function Main() {
             <Header onSignUp={setCurrentModal} isMain={true}/>
             <SearchForm onError={setErrorText} onSearch={createNewsList} onLoading={handleLoading} loadingStatus={isLoading}/>
             <NewsCardList onError={errorText} newsObj={news} category={localStorage.getItem("lastCategory")} loadingStatus={isLoading}/>
-            {currentModal === "signup" && <PopupWithForm name="signup" onSwitch={setCurrentModal}/>}
-            {currentModal === "signin" && <PopupWithForm name="signin" onSwitch={setCurrentModal}/>}
+            {currentModal === "signup" && <PopupWithForm name="signup" onSwitch={setCurrentModal} onSignUp={onSignUp} />}
+            {currentModal === "signin" && <PopupWithForm name="signin" onSwitch={setCurrentModal} onSignIn={onSignIn} />}
             {currentModal === "success" && <PopupWithForm name="success" onSwitch={setCurrentModal}/>}
             <About />
             <Footer />

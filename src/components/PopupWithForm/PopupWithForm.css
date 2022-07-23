@@ -97,7 +97,7 @@
 
 .modal__button-save {
     padding: 0;
-    margin-top: 47px;
+    margin-top: 74px;
     min-width: 360px;
 }
 
@@ -122,18 +122,6 @@
 .modal__switch span {
     color: #2F71E5;
     cursor: pointer;
-}
-
-.modal__input-error {
-    position: absolute;
-    margin-top: 2px;
-}
-
-.modal__input-error p {
-    font-family: 'Inter', Trebuchet MS, sans-serif;
-    color: red;
-    margin: 0;
-    font-size: 12px;
 }
 
 .modal__button-close {

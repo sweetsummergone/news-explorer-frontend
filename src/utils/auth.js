@@ -1,5 +1,13 @@
 export const BASE_URL = "https://api.coolnews.students.nomoredomainssbs.ru";
 
+const _checkResponse = (res) => {
+  if (res.ok) {
+      return res.json();
+  }
+
+  return Promise.reject(`Error ${res.status}: ${res.statusText}`);
+}
+
 const customFetch = ({ path, method, data }) => {
   return fetch(`${BASE_URL}${path}`, {
     method,
@@ -8,7 +16,7 @@ const customFetch = ({ path, method, data }) => {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(data),
-  }).then((res) => res.json());
+  }).then(_checkResponse);
 };
 
 export const register = (email, password, username) => {
@@ -16,7 +24,7 @@ export const register = (email, password, username) => {
     path: "/signup",
     method: "POST",
     data: { email, password, name: username },
-  });
+  })
 };
 
 export const authorize = (email, password) => {
@@ -44,5 +52,5 @@ export const checkToken = (token) => {
       "Content-Type": "application/json",
       Authorization: `Bearer ${token}`,
     },
-  }).then((res) => res.json())
+  }).then(_checkResponse);
 };
