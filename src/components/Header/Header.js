@@ -28,7 +28,7 @@ export default function Header({ onSignUp, isMain = false }) {
             {isOpened && 
                 <>    
                     <div onClick={() => setIsOpened(false)} className="modal__overlay" />
-                    <Navigation name={currentUser.name} isOpened onSignUp={onSignUp} onLogout={handleUserLogout} isMain={isMain}/>
+                    <Navigation auth={isAuth} name={currentUser.name} isOpened onSignUp={onSignUp} onLogout={handleUserLogout} isMain={isMain}/>
                 </>
             }
         </>

@@ -21,7 +21,7 @@ class NewsApi {
 }
 
 const api = new NewsApi({
-    baseUrl: "https://newsapi.org/v2/"
+    baseUrl: "https://nomoreparties.co/news/v2"
 });
   
 export default api;

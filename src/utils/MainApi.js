@@ -70,7 +70,7 @@ class MainApi {
 }
 
 const mainApi = new MainApi({
-    baseUrl: "http://localhost:3001", 
+    baseUrl: "https://api.coolnews.students.nomoredomainssbs.ru", 
     headers: {
         authorization: `Bearer ${localStorage.getItem('jwt')}`,
         Accept: "application/json",

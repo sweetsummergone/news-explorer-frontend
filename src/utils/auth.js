@@ -1,4 +1,4 @@
-export const BASE_URL = "http://localhost:3001";
+export const BASE_URL = "https://api.coolnews.students.nomoredomainssbs.ru";
 
 const customFetch = ({ path, method, data }) => {
   return fetch(`${BASE_URL}${path}`, {
