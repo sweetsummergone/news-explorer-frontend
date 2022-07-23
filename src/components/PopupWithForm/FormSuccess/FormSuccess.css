@@ -1,5 +1,6 @@
 @media screen and (max-width: 767px) {
     .modal__success {
         margin: 0;
+        padding: 20px;
     }   
 }
